@@ -1,0 +1,17 @@
+databases:
+  - name: sequence-studio-db
+    plan: free
+    region: frankfurt
+
+services:
+  - type: web
+    name: sequence-studio
+    runtime: docker
+    plan: free
+    region: frankfurt
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: sequence-studio-db
+          property: connectionString

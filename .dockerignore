@@ -1,0 +1,8 @@
+.git
+.pnpm-store
+tmp
+data
+frontend/node_modules
+frontend/dist
+frontend/tsconfig.tsbuildinfo
+*.exe
