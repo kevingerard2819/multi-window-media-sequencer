@@ -41,6 +41,16 @@ The Go server listens on `:8080`; Vite listens on its displayed port and proxies
 - Media URLs must be public HTTP or HTTPS addresses. Video autoplay is muted to satisfy browser autoplay rules.
 - The assignment references example seed windows and lists but does not include them, so the bundled seed data is illustrative.
 
+The first launch creates these illustrative playlists (each row shows media type and duration):
+
+| Display | Playlist order |
+| --- | --- |
+| Atrium | Horizon image (12s) -> Flower film video (10s) -> Terrain image (12s) |
+| Gallery | Terrain image (14s) -> Orbit image (14s) -> Quiet interval blank (5s) |
+| Studio | Orbit image (11s) -> Flower film video (9s) -> Horizon image (11s) |
+
+These are examples, not a claim that they match omitted assignment media lists. Seed images ship with the frontend; the Flower film uses a public MDN video URL.
+
 ## API
 
 All errors use `{ "error": "message" }`.
