@@ -14,7 +14,7 @@ docker compose up --build
 
 Open `http://localhost:8080`. The application seeds three sample windows on first launch. Data is saved in `./data/state.json` through a bind mount and survives restarts. The seed images are bundled with the frontend. The seed video uses an external MDN example URL and needs an internet connection.
 
-To run development servers separately, install Go 1.22+ and Node 24+ with pnpm, then:
+To run development servers separately, install Go 1.25+ and Node 24+ with pnpm, then:
 
 ```sh
 cd backend
