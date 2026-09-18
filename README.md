@@ -2,6 +2,8 @@
 
 A React and Go application for independent media playlists across three display panels. Each panel loops its ordered playlist throughout a five-hour normal playback cycle. A sync command temporarily shows one selected item on every panel, then resumes each panel's normal position. Storage uses a local JSON file by default or PostgreSQL when `DATABASE_URL` is set.
 
+**Live demo:** https://sequence-studio.onrender.com
+
 ## Quick start
 
 With Docker installed:
@@ -75,7 +77,7 @@ Sync duration must be 1 second to 5 minutes. The server returns `409` if a sync 
 
 Build the included Dockerfile and run one container with port `8080` exposed, HTTPS supplied by the hosting platform, and a persistent volume mounted at `/data` unless using PostgreSQL. Set `PORT`, `DATA_FILE`, and `WEB_DIR` if the defaults do not fit the host. Set `DATABASE_URL` to a PostgreSQL connection string to store state in the database instead. Both the React build and Go API are served from the same origin, so no CORS configuration is required. Configure the host's health check to `/health`.
 
-The included `render.yaml` creates one free Docker web service and one free Render Postgres database in Frankfurt. Connect a Git repository containing this project to a new Render Blueprint, then review and create both resources. The web service receives `DATABASE_URL` automatically. Render free Postgres databases expire after 30 days unless upgraded; export or upgrade the database if the demo must stay live longer. The service runs as one instance because it keeps an in-memory copy of state and uses an in-process event stream. No public deployment URL is included until a Render account is connected and deployment completes.
+The included `render.yaml` creates one free Docker web service and one free Render Postgres database in Frankfurt. Connect a Git repository containing this project to a new Render Blueprint, then review and create both resources. The web service receives `DATABASE_URL` automatically. Render free web services spin down when idle, so the first visit after inactivity can take longer. Free Postgres databases expire after 30 days unless upgraded; export or upgrade the database if the demo must stay live longer. The service runs as one instance because it keeps an in-memory copy of state and uses an in-process event stream. The live service uses the URL above.
 
 ## Verification
 
